@@ -11,8 +11,7 @@ class LoginPage(BasePage):
 
     def should_be_login_url(self):
         # реализуйте проверку на корректный url адрес
-        current_url = webdriver.current_url
-        assert (*LoginPageLocators.LOGIN_URL) in current_url, "'login' is not in current url"
+        assert (*LoginPageLocators.LOGIN_URL) in self.url, "'login' is not in current url"
 
     def should_be_login_form(self):
         self.is_element_present(
